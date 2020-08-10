@@ -1,0 +1,53 @@
+# The URL the site will be built for
+base_url = "https://wdkwwdk.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# The default language; used in feeds.
+default_language = "en"
+
+# When set to "true", a feed is automatically generated.
+generate_feed = true
+
+highlight_theme = "material-light"
+
+theme = "zola-sam"
+
+taxonomies = [
+    {name = "tags", paginate_by = 25, rss = true}
+]
+
+[extra]
+# Show a summary of a post in a list
+slim_summary = true
+# Show the content of a post in a list
+slim_content = true
+# Links to show at the top of the menu
+slim_menu = [
+    {url = "$BASE_URL/tags", name = "Tags"}
+]
+# Links to show at the bottom of the menu
+slim_social = [
+    {url = "https://github.com/knisbet", name = "Github"}
+]
+
+copyright = "Copyright Kevin Nisbet 2020"
+instantpage_enable = true
+
+sam_menu = [
+    { text = "about", link = "/about" },
+    { text = "posts", link = "/posts" },
+    { text = "github", link = "https://github.com/knisbet" }
+]
+sam_bottom_menu = true
+date_format = "%Y-%m-%d"
+show_word_count = true
+show_reading_time = true

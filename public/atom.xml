@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title></title>
+	<link href="http://127.0.0.1:1111/atom.xml" rel="self" type="application/atom+xml"/>
+	<link href="http://127.0.0.1:1111"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-07-09T00:00:00+00:00</updated>
+	<id>http://127.0.0.1:1111/atom.xml</id>
+	<entry xml:lang="en">
+		<title>We don&#x27;t know what we don&#x27;t know</title>
+		<published>2020-07-09T00:00:00+00:00</published>
+		<updated>2020-07-09T00:00:00+00:00</updated>
+		<link href="http://127.0.0.1:1111/posts/we-dont-know/" type="text/html"/>
+		<id>http://127.0.0.1:1111/posts/we-dont-know/</id>
+		<content type="html">&lt;p&gt;Recently, I&#x27;ve begun to spend more effort considering and emphasizing on what I don&#x27;t know. Like many engineers, I rely heavily on mental models when tackling technical problems and often miss approaches missing from my mental model. I also have the aspect of my personality where I don&#x27;t like to be wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s spend some time considering what it means not to know what we don&#x27;t know and how we can remind ourselves of some of our own biases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-wdkwwdk&quot;&gt;What is WDKWWDK?&lt;&#x2F;h2&gt;
+&lt;p&gt;It&#x27;s an acronym to remind ourselves that we may be missing some piece of the puzzle. I&#x27;m not the first to use this acronym, but I also don&#x27;t believe it&#x27;s widely spread.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve slowly begun to use this acronym as a reminder in chat or conversation that we don&#x27;t know or remember every detail. It&#x27;s a reminder that we should step back and ask ourselves questions about what may be missing from our approach, conversation, engineering design, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;It doesn&#x27;t mean we have to answer every question, only that we&#x27;re cognizant that we&#x27;ll always be missing some details, and that there are risks with doing so.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;my-first-experience-with-wdkwwdk&quot;&gt;My first experience with WDKWWDK&lt;&#x2F;h2&gt;
+&lt;p&gt;For me, this realization first came during a meeting.&lt;&#x2F;p&gt;
+&lt;p&gt;We were trying to tackle a specific security challenge that required selecting a cryptographic protocol with particular properties. I was the security lead on the team and was able to recommend Noise based on some industry experts&#x27; suggestions.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem we had is we weren&#x27;t able to locate an implementation of the protocol for our embedded CPU. While I was evolving into a security lead for the team with a better than average understanding of security principles, I was utterly ill-prepared to write a crypto implementation that would pass any scrutiny.&lt;&#x2F;p&gt;
+&lt;p&gt;However, with the most knowledge, the team asked me to develop the implementation.&lt;&#x2F;p&gt;
+&lt;p&gt;I objected, indicating that writing a cryptographic implementation is detailed work, and it&#x27;s challenging to be sure that the implementation is correct.&lt;&#x2F;p&gt;
+&lt;p&gt;The team countered, saying that it must be correct if the implementation can communicate with another library.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is it&#x27;s possible to write a compatible protocol implementation, that has significant security problems. Re-using nonces or timing attacks could ruin our day, and we&#x27;d easily miss out on the security properties we desired.&lt;&#x2F;p&gt;
+&lt;p&gt;The team countered again, indicating that if I knew about problems like nonce re-use or timing attacks, that I should avoid those problems. &lt;&#x2F;p&gt;
+&lt;p&gt;Any problem I can describe is a problem I can avoid.&lt;&#x2F;p&gt;
+&lt;p&gt;Eventually, I had to figure out to approach this engineering conversation as an admission, I don&#x27;t know what I don&#x27;t know, so I&#x27;m ill-prepared to solve problems I don&#x27;t even know to avoid. &lt;&#x2F;p&gt;
+&lt;p&gt;Not only did I need to admit what I didn&#x27;t know, but as a team, we had to admit combined that we didn&#x27;t know what we didn&#x27;t know. In many scenarios, we may be able to get away with this, but here, a failure meant we failed to deliver on our security promises.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;is-this-the-dunning-kruger-effect&quot;&gt;Is this the Dunning-Kruger effect?&lt;&#x2F;h2&gt;
+&lt;p&gt;For those who aren&#x27;t familiar, a simplified version of the Dunning-Kruger effect states that a cognitive bias exists where individuals with limited knowledge or competence in a given intellectual domain greatly overestimate their expertise or skill in that domain. And that those with a great deal of expertise tend to underestimate their results. &lt;&#x2F;p&gt;
+&lt;p&gt;While the Dunning-Kruger effect may apply here, we often forget that this cognitive bias only means that people scoring in the 12th percentile had ranked themselves in the 62nd percentile. But those in the 90th percentile had self-assessed to be within the ~75th percentile. &lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.researchgate.net&#x2F;profile&#x2F;David_Dunning2&#x2F;publication&#x2F;12688660&#x2F;figure&#x2F;fig1&#x2F;AS:394431292297232@1471051156893&#x2F;Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1.png&quot; alt=&quot;Image from Dunning-Kruger Research&quot; &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.researchgate.net&#x2F;figure&#x2F;Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1_fig1_12688660&quot;&gt;Dunning-Kruger effect on research gate for more information&lt;&#x2F;a&gt;
+&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;
+So while this cognitive bias is fascinating, in software engineering disciplines, it&#x27;s unreasonable to believe in senior teams we&#x27;re dealing with anyone in the 1st or 2nd quartile who are vastly overestimating their abilities. &lt;&#x2F;p&gt;
+&lt;p&gt;The important lesson here is we need to be aware of and careful of our biases, whether it be the Dunning-Kruger effect or something else.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fear&quot;&gt;Fear&lt;&#x2F;h2&gt;
+&lt;p&gt;As engineers, I think we get used to analyzing complex problems and coming back with answers. Especially those of us who are known for digging in and finding the solutions.&lt;&#x2F;p&gt;
+&lt;p&gt;When given a task, there may also be a particular fear associated with not having the answer. If your leadership or team members expect you are an expert in a domain and are assigned a problem, it feels like a failure to return without the full solution. Or without carefully considering every possibility.&lt;&#x2F;p&gt;
+&lt;p&gt;It&#x27;s also happened to me, where others have tried to shame me for not knowing some detail off hand. As an expert in X, you should immediately know the answer to a question. &lt;&#x2F;p&gt;
+&lt;p&gt;A large part of this is realizing it&#x27;s not a failure to admit that we have missing knowledge. We may not remember some details or have more research to do. Maybe there is no action required. The failure is to proceed without identifying the risk of the missing information. Whether an expert or not, there are always going to be missing details. When working in security, the missed detail could be the difference between high and abysmal security. In other domains, the risks may be much different.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-do-we-apply-this&quot;&gt;How do we apply this?&lt;&#x2F;h2&gt;
+&lt;p&gt;I think it&#x27;s as simple as stating, &amp;quot;We don&#x27;t know what we don&#x27;t know&amp;quot; in a conversation, or typing WDKWWDK into a document or chat session. And ensuring our teams and leaders don&#x27;t allow a stigma to exist around not knowing some details.&lt;&#x2F;p&gt;
+&lt;p&gt;This statement of fact, acts as a reminder, that we should step back and consider how our biases may impact a particular decision and find what information may be missing.&lt;&#x2F;p&gt;
+&lt;p&gt;We can then consider:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;What we know&lt;&#x2F;li&gt;
+&lt;li&gt;What we know we don&#x27;t know&lt;&#x2F;li&gt;
+&lt;li&gt;What we don&#x27;t know that we don&#x27;t know&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And decide on the risks of proceeding with missing information, cognizant that there will always be missing information.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;When decision making or proposing engineering solutions, we need to remind ourselves that there are details that we don&#x27;t know&lt;&#x2F;li&gt;
+&lt;li&gt;We need to do our best to avoid stigmas about gaps in our knowledge. Being an expert in security does not dictate knowledge of every algorithm, every protocol, or every approach.&lt;&#x2F;li&gt;
+&lt;li&gt;WDKWWDK can often be about risk management. Missing details in security me be the difference between a solution being secure, or offering no security properties. In other contexts, it may just be a bug.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+</feed>
