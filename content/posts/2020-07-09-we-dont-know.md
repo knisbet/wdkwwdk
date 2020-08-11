@@ -2,13 +2,13 @@
 title = "We don't know what we don't know"
 +++
 
-Recently, I've begun to spend more effort considering and emphasizing on what I don't know. Like many engineers, I rely heavily on mental models when tackling technical problems and often miss approaches missing from my mental model. I also have the aspect of my personality where I don't like to be wrong.
+Recently, I've begun to spend more effort considering and emphasis on what I don't know. Like many engineers, I rely heavily on mental models when tackling technical problems and often miss approaches missing from my mental model. I also have the aspect of my personality where I don't like to be wrong.
 
 Let's spend some time considering what it means not to know what we don't know and how we can remind ourselves of some of our own biases.
 
 
 ## What is WDKWWDK?
-It's an acronym to remind ourselves that we may be missing some piece of the puzzle. I'm not the first to use this acronym, but I also don't believe it's widely spread.
+It's an acronym to remind ourselves that we may be missing some piece of the puzzle. I'm not the [first](https://shaker.com/questions-your-company-needs-to-be-asking-itself-and-acting-on-now/) to use this acronym, but I also don't believe it's widely used.
 
 I've slowly begun to use this acronym as a reminder in chat or conversation that we don't know or remember every detail. It's a reminder that we should step back and ask ourselves questions about what may be missing from our approach, conversation, engineering design, etc.
 
@@ -18,7 +18,7 @@ It doesn't mean we have to answer every question, only that we're cognizant that
 ## My first experience with WDKWWDK
 For me, this realization first came during a meeting.
 
-We were trying to tackle a specific security challenge that required selecting a cryptographic protocol with particular properties. I was the security lead on the team and was able to recommend Noise based on some industry experts' suggestions.
+We were trying to tackle a specific security challenge that required selecting a cryptographic protocol with particular properties. I was responsible for the security perspective on the team and was able to recommend Noise based on some industry experts' suggestions.
 
 The problem we had is we weren't able to locate an implementation of the protocol for our embedded CPU. While I was evolving into a security lead for the team with a better than average understanding of security principles, I was utterly ill-prepared to write a crypto implementation that would pass any scrutiny.
 
@@ -41,16 +41,16 @@ Not only did I need to admit what I didn't know, but as a team, we had to admit 
 
 
 ## Is this the Dunning-Kruger effect?
-For those who aren't familiar, a simplified version of the Dunning-Kruger effect states that a cognitive bias exists where individuals with limited knowledge or competence in a given intellectual domain greatly overestimate their expertise or skill in that domain. And that those with a great deal of expertise tend to underestimate their results. 
+For those who aren't familiar, a simplified view of the Dunning-Kruger effect states that a cognitive bias exists where individuals with limited knowledge or competence in a given intellectual domain greatly overestimate their expertise or skill in that domain. And that those with a great deal of expertise tend to underestimate their results. 
 
 While the Dunning-Kruger effect may apply here, we often forget that this cognitive bias only means that people scoring in the 12th percentile had ranked themselves in the 62nd percentile. But those in the 90th percentile had self-assessed to be within the ~75th percentile. 
 
 ![Image from Dunning-Kruger Research](https://www.researchgate.net/profile/David_Dunning2/publication/12688660/figure/fig1/AS:394431292297232@1471051156893/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1.png)
-[Dunning-Kruger effect on research gate for more information](https://www.researchgate.net/figure/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1_fig1_12688660)
+<br />[Dunning-Kruger effect on research gate for more information](https://www.researchgate.net/figure/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1_fig1_12688660)
 <br /><br /><br />
 So while this cognitive bias is fascinating, in software engineering disciplines, it's unreasonable to believe in senior teams we're dealing with anyone in the 1st or 2nd quartile who are vastly overestimating their abilities. 
 
-The important lesson here is we need to be aware of and careful of our biases, whether it be the Dunning-Kruger effect or something else.
+We can still draw an important lesson here; that we need to be aware of and careful of our biases, with it be the Dunning-Kruger effect or something else.
 
 
 ## Fear
@@ -72,7 +72,7 @@ This statement of fact, acts as a reminder, that we should step back and conside
 We can then consider:
 - What we know
 - What we know we don't know
-- What we don't know that we don't know
+- What we might not know that we don't know
 
 And decide on the risks of proceeding with missing information, cognizant that there will always be missing information.
 
