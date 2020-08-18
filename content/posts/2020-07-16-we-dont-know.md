@@ -41,23 +41,23 @@ This cognitive bias is fascinating and may explain some of the "solutions" or "p
 While the Dunning-Kruger effect may apply here, we often forget that this cognitive bias only means that people scoring in the 12th percentile had ranked themselves in the 62nd percentile. But those in the 90th percentile had self-assessed to be within the ~75th percentile. 
 
 ![Image from Dunning-Kruger Research](https://www.researchgate.net/profile/David_Dunning2/publication/12688660/figure/fig1/AS:394431292297232@1471051156893/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1.png)
-<br />[Dunning-Kruger effect on research gate for more information](https://www.researchgate.net/figure/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1_fig1_12688660)
-<br /><br /><br />
+[Dunning-Kruger effect on research gate for more information](https://www.researchgate.net/figure/Perceived-ability-to-recognize-humor-as-a-function-of-actual-test-performance-Study-1_fig1_12688660)
+<br /><br />
 
 With this in mind, on average, individuals without much exposure do not rank themselves as experts in an area they don't know.
 
-We can still draw an important lesson here; that we need to be aware of and careful of our biases, with it be the Dunning-Kruger effect or something else.
+We can still draw an important lesson here; that we need to be aware of and careful of our biases, whether it be the Dunning-Kruger effect or something else.
 
 
 ## Unconscious Fear
 ![xkcd 1053](https://imgs.xkcd.com/comics/ten_thousand.png)
-<br />[XKCD 1053](https://xkcd.com/1053/)
+[xkcd 1053](https://xkcd.com/1053/)
 
 As engineers, I think we get used to analyzing complex problems and coming back with answers. Especially those of us who are known for digging in and finding the solutions.
 
 When given a task, there may also be a particular fear associated with not having the answer. If your leadership or team members expect you are an expert in a domain and are assigned a problem, it feels like a failure to return without the full solution. 
 
-For me, it's even come to the point where others have tried shame me in front of my peers for not knowing some technical detail off hand. This behaviour creates perverse incentives that it's better to stick with an assumption than admit we don't know something. I know I've unconciously affected others in this same way.
+For me, it's even come to the point where others have tried shame me in front of my peers for not knowing some technical detail off hand. This behaviour creates perverse incentives that it's better to stick with an assumption than admit we don't know something. I know I've unconciously affected others in this same way, which is one of my regrets. 
 
 A large part of this is realizing it's not a failure to admit that we have missing knowledge. We may not remember some details or have more research to do. Maybe there is no action required. The failure is to proceed without identifying the risk of the missing information. Whether an expert or not, there are always going to be missing details. When working in security, the missed detail could be the difference between high and abysmal security. In other domains, the risks may be much different.
 
@@ -70,7 +70,7 @@ I think it's as simple as stating, "We don't know what we don't know" in a conve
 
 I'm not the [first](https://shaker.com/questions-your-company-needs-to-be-asking-itself-and-acting-on-now/) to use this acronym, but I also don't believe we use it enough.
 
-This statement of fact, acts as a reminder, that we should step back and consider how our biases may impact a particular decision and find what information may be missing.
+This statement of fact, acts as a reminder, that we should step back and consider how our biases may impact a particular decision or design and to identify what information may be missing.
 
 We can then consider:
 - What we know
@@ -83,7 +83,7 @@ And decide on the risks of proceeding with missing information, cognizant that t
 ## Summary
 Before committing to an approach to an engineering problem, remind yourself or the team that there are likely missing details that may affect the outcome. How to proceed largely depends on the risks involved, topics like security have different risks than the CI/CD pipeline. 
 
-And we need to remind ourselves and our peers to avoid the stigmas and biases introduced by admitting we don't know things. Being an expert in a domain like security, doesn't mean memorization of every algorithm, every protocol, or approach. 
+And we need to remind ourselves and our peers to avoid the stigmas and biases introduced by admitting we don't know things. Being an expert in a domain like security, doesn't mean memorization of every algorithm, every protocol, or approach.
 
 
 
