@@ -41,9 +41,9 @@ hermit_menu = [
     { link = "/about", name = "About" }
 ]
 hermit_social = [
-    { name = "linkedin", link = "https://ca.linkedin.com/in/kevin-nisbet-783a0a49" },
     { name = "github", link = "https://github.com/knisbet" },
-    { name = "email", link = "mailto:kevin@wdkwwdk.com" }
+    { name = "email", link = "mailto:kevin@wdkwwdk.com" },
+    { name = "linkedin", link = "https://ca.linkedin.com/in/kevin-nisbet-783a0a49" }
 ]
 [extra.highlightjs]
 enable = true
