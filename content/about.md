@@ -9,9 +9,8 @@ no_header = true
 This blog is about the discovery and discussion of topics we didn't know that we didn't know. I may also include other random thoughts.
 
 ## Talking to me
-I'm old school, and actually prefer email and don't use social media:
+I tend to avoid most social media, so email is the best way to get ahold of me:
 - Email: [kevin@wdkwwdk.com](mailto:kevin@wdkwwdk.com)
-- Keybase: [https://keybase.io/knisbet](https://keybase.io/knisbet)
 
 I don't promise to reply.
 

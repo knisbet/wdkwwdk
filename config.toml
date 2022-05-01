@@ -19,35 +19,37 @@ generate_feed = true
 
 highlight_theme = "material-light"
 
-theme = "zola-sam"
+theme = "hermit_zola"
 
 taxonomies = [
     {name = "tags", paginate_by = 25, rss = true}
 ]
 
 [extra]
-# Show a summary of a post in a list
-slim_summary = true
-# Show the content of a post in a list
-slim_content = true
-# Links to show at the top of the menu
-slim_menu = [
-    {url = "$BASE_URL/tags", name = "Tags"}
-]
-# Links to show at the bottom of the menu
-slim_social = [
-    {url = "https://github.com/knisbet", name = "Github"}
-]
-
 copyright = "Copyright Kevin Nisbet 2020"
 instantpage_enable = true
 
-sam_menu = [
-    { text = "about", link = "/about" },
-    { text = "posts", link = "/posts" },
-    { text = "github", link = "https://github.com/knisbet" }
-]
-sam_bottom_menu = true
 date_format = "%Y-%m-%d"
 show_word_count = true
 show_reading_time = true
+
+# hermit_zola theme
+home_subtitle = "We don't know what we don't know"
+footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>'
+hermit_menu = [
+    { link = "/posts", name = "Posts" },
+    { link = "/about", name = "About" }
+]
+hermit_social = [
+    { name = "linkedin", link = "https://ca.linkedin.com/in/kevin-nisbet-783a0a49" },
+    { name = "github", link = "https://github.com/knisbet" },
+    { name = "email", link = "mailto:kevin@wdkwwdk.com" }
+]
+[extra.highlightjs]
+enable = true
+clipboard = true
+theme = "vs2015"
+
+[extra.author]
+name = "Kevin Nisbet"
+email = "kevin@wdkwwdk.com"
