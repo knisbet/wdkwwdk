@@ -4,8 +4,48 @@
 	<link href="https://wdkwwdk.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://wdkwwdk.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-04-30T00:00:00+00:00</updated>
+	<updated>2022-05-14T00:00:00+00:00</updated>
 	<id>https://wdkwwdk.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Bitcoin isn&#x27;t for everyone</title>
+		<published>2022-05-14T00:00:00+00:00</published>
+		<updated>2022-05-14T00:00:00+00:00</updated>
+		<link href="https://wdkwwdk.com/posts/bitcoin/" type="text/html"/>
+		<id>https://wdkwwdk.com/posts/bitcoin/</id>
+		<content type="html">&lt;p&gt;Bitcoin can be a polarizing topic. There are certainly a strong following of bitcoin and derivatives, but many of the engineers I know are opposed to the technology. &lt;&#x2F;p&gt;
+&lt;p&gt;What motivated me to finally get this post out however, is the other week I encountered a non-engineer, non-technical advocate for Bitcoin. They were a restaurant worker, and explained they have a side gig of helping others gt into bitcoin. And we had a bit of a discussion on why I don&#x27;t believe in Bitcoin, or derivatives, as a form of asset, payment, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;And it comes down to, sitting at a restaurant, look around the room, who in that room can effectively and safely use Bitcoin. &lt;&#x2F;p&gt;
+&lt;h1 id=&quot;who-can-safely-use-bitcoin&quot;&gt;Who can safely use Bitcoin?&lt;&#x2F;h1&gt;
+&lt;p&gt;Almost no one.&lt;&#x2F;p&gt;
+&lt;p&gt;In the tech industry, working with very technical folks, it&#x27;s easy to forget most people are not tech workers. Computers are a tool too many, but they don&#x27;t understand how they work. &lt;&#x2F;p&gt;
+&lt;p&gt;I had a conversation with my Sister once, where I tried to explain just what a block chain is. And she didn&#x27;t get it. Not that knowing how it works is necessary. The problem with bitcoin is, someone needs to handle some secrets pretty securely to not lose all of their money. Look around the room, and identify who can really employ the personal security required to effectively use cold wallets, verify destination addresses, not to store their secret incorrectly, backup the secrets incase of a hard drive failure, etc. All techniques required to ensure their money doesn&#x27;t disappear.&lt;&#x2F;p&gt;
+&lt;p&gt;So I think Bitcoin has a unstated premise, that users need a high degree of expertise in best practices to even use the technology.&lt;&#x2F;p&gt;
+&lt;p&gt;Most people don&#x27;t have the time for this, or the technical basis to even learn it.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;what-bitcoin-doesn-t-do&quot;&gt;What bitcoin doesn&#x27;t do?&lt;&#x2F;h1&gt;
+&lt;p&gt;Living in a stable western democracy, I think there is a bit of a flaw in the concept of Bitcoin. In our techno sphere where we&#x27;re used to controlling computers through our code, we forget that our current money system has lots of checks and balances in place, and banking over decades has built many rules to accommodate exceptions, many of which we as individuals have never had to deal with in our lives.&lt;&#x2F;p&gt;
+&lt;p&gt;So I like to think of problems in the sense of properties:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mistakes&quot;&gt;Mistakes&lt;&#x2F;h2&gt;
+&lt;p&gt;Mistakes will happen. Many by user input failures, ignoring checks and balances, software bugs, rushing, or even hardware failures that corrupt memory. The current banking system doesn&#x27;t always get this right, and it may not be instant, but in many cases banking failures can be corrected. &lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin, as a cryptographic ledger, immortalizing all mistakes. The only reversible change in the theory of blockchains, is to have the destination run a second transaction to return an amount. Sure, developers have gotten together to tamper with some of the chains to reverse problems before, but no one is fixing the $1000 sent to an address that doesn&#x27;t exist.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;power-of-attorney-estate&quot;&gt;Power of attorney &#x2F; Estate&lt;&#x2F;h2&gt;
+&lt;p&gt;It&#x27;s easy to forget, that in some circumstances at some point in our lives our assets may need to be turned over to others. Whether it&#x27;s a death, and turning over the estate, or some other condition that leads to or requires power of attorney. &lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m sure the Bitcoin advocates can point to failures of this system, or unjust conservatorship that&#x27;s been applied. But on average, this is a system that applies to millions of people, that doesn&#x27;t really have a Bitcoin equivalent. Recovery from sudden death, means a pre-planned method of preserving and turning over secrets, that not many will do. And then the additional operational security of only having the secrets turned over when required, and that the storage of those secrets doesn&#x27;t become the weak link to steal all of someones &amp;quot;money&amp;quot;.&lt;&#x2F;p&gt;
+&lt;p&gt;And something as simple as rotating your secrets, now requires many additional steps.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;court-orders&quot;&gt;Court orders&lt;&#x2F;h2&gt;
+&lt;p&gt;So you went to court, got a judgement. Maybe it&#x27;s big, maybe it&#x27;s small. And the opponent doesn&#x27;t pay what is ordered by the court. Bitcoin removes an option here for enforcement, if the money is sitting in a bank. If the judgement is large and the party simply decides not to pay, are you going to garnish wages for the next 20 years? When the money you&#x27;re owed is just sitting their.&lt;&#x2F;p&gt;
+&lt;p&gt;Hell, in these types of conflicts someone could in a fit of deviancy decide to just destroy the amount by transferring to nowhere instead of complying with the judgement, and then good luck.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m just waiting for the first court cases to explore Blockchains, and orders for transfers. &lt;&#x2F;p&gt;
+&lt;h2 id=&quot;legal-enforcement&quot;&gt;Legal Enforcement&lt;&#x2F;h2&gt;
+&lt;p&gt;I realize for many this might be a feature, but I think of it as a bug. For the most part I agree with law enforcement holds, as long as their is a strong judiciary process, and government sanctions. Can someone find a sanction I disagree with, of course. But I also live in a represented society where I&#x27;m not going to agree with every law enforcement or government decision, and that&#x27;s fine.&lt;&#x2F;p&gt;
+&lt;p&gt;And there are real problems with some of these systems, asset forfeiture is rampant, but do I really believe that using a digital wallet is going to stop a government from stealing my stuff. We need to demand better of our institutions where they fail, not work around them and opening the flood gates for criminal behaviour. &lt;&#x2F;p&gt;
+&lt;h1 id=&quot;for-those-who-don-t-have-strong-institutions&quot;&gt;For those who don&#x27;t have strong institutions&lt;&#x2F;h1&gt;
+&lt;p&gt;I know Bitcoin is having some success where the commerce of the state is failing, for various reasons. I don&#x27;t have a good answer for that use case. But I don&#x27;t believe in the long run, that Bitcoin successfully replaces the institutions of banking, legal recourse, and security for those who don&#x27;t have those institutions.&lt;&#x2F;p&gt;
+&lt;p&gt;So there are very real problems to be solved here, and I understand why Bitcoin does get involved, but I think we should demand more here, not try to duct tape a severely flawed solution that forgets what purposes institutions serve in our lives. &lt;&#x2F;p&gt;
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h1&gt;
+&lt;p&gt;While I&#x27;m sure there are some who will sit around and say all of these are features. The times the court fail, government mistakes, illegitimate power of attorney occur could all be avoided with Bitcoin. No one should be able to force you to pay a penny you don&#x27;t want to.&lt;&#x2F;p&gt;
+&lt;p&gt;But in my opinion, Bitcoin simply isn&#x27;t a technology the vast majority of the populace can use safely, or to achieve goals they can easily do with the current banking system.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Comments are for why, not what</title>
 		<published>2022-04-30T00:00:00+00:00</published>
