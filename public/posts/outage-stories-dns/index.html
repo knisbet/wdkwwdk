@@ -20,7 +20,7 @@
   />
   <link rel="stylesheet" href="https://wdkwwdk.com/style.css"/>
   
-  <title>Outage Stories: Cell Phone Roaming DNS Outage</title>
+  <title>Outage Stories: When DNS takes out cell phone roaming</title>
   
 
   
@@ -116,24 +116,24 @@
 		<small> - 
 <span class="reading-time" title="Estimated read time">
   
-  7 min read
+  8 min read
   
 </span>
 </small>
 		
             
 	  </div>
-	  <h1>Outage Stories: Cell Phone Roaming DNS Outage</h1>
+	  <h1>Outage Stories: When DNS takes out cell phone roaming</h1>
 	</header>
 
 	<div class="content">
         
-	  <p>When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. This post covers an interesting outage I investigated which caused users roaming into Canada from their home networks fail to get an internet connection. Some of these users would be redirected to a competitor, but we would've lost the roaming revenue. </p>
-<p>The outage was caused by the uniqueness of the way wireless carriers use DNS, a configuration discrepancy, and a subtle behavior of the way the DNS protocol works.</p>
-<p>I've been out of the industry for 5 years now and am reconstructing the story, so there may be some inaccuracy.</p>
+	  <p>When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. A number of these outages were caused by the way Telecom networks use and deploy a DNS architecture separated from the internet. It's the same protocol, but runs on it's own networks with separate root servers and a few oddities you wouldn't expect on the internet.</p>
+<p>In this post I'll talk about one of the outages I investigated, where planned maintenance, an unplanned outage, and a miss-configuration led to a triple redundant architecture going down and breaking users roaming into Canada from getting an internet connection.</p>
+<p>I've been out of the industry for a number of years now and I'm putting this back together from memory, so there may be some inaccuracy. </p>
 <h2 id="background">Background</h2>
 <p>At the time, network operators such as the one I worked for generally operated as integrators of proprietary solutions. Think of a company like Cisco, that makes large scale routers for carrier grade networks, the same applies to Wireless. This generally creates a few challenges, troubleshooting requires builtin tools, logs, metrics or to look at the equipment externally, such as by taking traffic captures. We rarely had the source code or internal knowledge of the products.</p>
-<p>When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture that doesn't really manage servers, they immediately went unmaintained. </p>
+<p>When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture at the time that doesn't really manage servers, they immediately went unmaintained. </p>
 <p>These unmaintained DNS servers were eventually replaced with a new set of DNS servers that were provided by a vendor as an appliance and had a team assigned to maintain the new system with proper vendor support for hardware and software. </p>
 <p>Even though all of this service discovery was built on the DNS protocol, LTE and UMTS used an architecture completely isolated from the internet, with its own set of root servers and a nice set of standards violations which caused a nice set of problems. In our case, the root servers were provided by a roaming exchange, which can be thought of as a company that exists to connect wireless carriers and facilitate how your cell phone can move from one carrier to another.</p>
 <h2 id="the-outage">The Outage</h2>
@@ -167,7 +167,7 @@
 <li>When starting Bind and inspecting the caches, records within the root hints would be present.</li>
 <li>Going packet by packet through the startup sequence, there was a discrepancy in the responses to AAAA queries to the root servers for the names of the root servers. The working servers would return a no data result. The non-working root would return a name error response to the AAAA query.
 <ul>
-<li>This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.</li>
+<li>Note: This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.</li>
 </ul>
 </li>
 <li>After the startup queries were returned, the records for the root server were missing from the cache.</li>
@@ -202,7 +202,7 @@
 </span><span>errors are combined, then useless queries may slow the application.
 </span></code></pre>
 <p>It’s subtle...</p>
-<p>Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.</p>
+<p>Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. From the way we interact with and configure DNS servers, we create records independent of each other. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.</p>
 <p>So BIND was drawing the inference it was supposed to, the particular name received a name error (NXDomain) response, which meant the name doesn’t exist for any record type. So when performing an IPv6 system query, it should delete all records from its cache that contain the name that doesn’t exist, even those entries that we statically configured in our hints file for the IPv4 address of our root server.</p>
 <p>So our IPv4 records for who is root, were getting deleted by system queries that were checking to see if any IPv6 addresses were available for those root servers. </p>
 <h2 id="root-cause">Root Cause</h2>
@@ -234,7 +234,7 @@
 	<hr class="post-end">
 	<footer class="post-info">
     
-    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1973 Words</p>
+    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2017 Words</p>
     
     <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-05-29</p>
     

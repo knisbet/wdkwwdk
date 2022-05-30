@@ -1,18 +1,17 @@
 +++
-title = "Outage Stories: Cell Phone Roaming DNS Outage"
+title = "Outage Stories: When DNS takes out cell phone roaming"
 +++
 
-When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. This post covers an interesting outage I investigated which caused users roaming into Canada from their home networks fail to get an internet connection. Some of these users would be redirected to a competitor, but we would've lost the roaming revenue. 
+When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. A number of these outages were caused by the way Telecom networks use and deploy a DNS architecture separated from the internet. It's the same protocol, but runs on it's own networks with separate root servers and a few oddities you wouldn't expect on the internet.
 
-The outage was caused by the uniqueness of the way wireless carriers use DNS, a configuration discrepancy, and a subtle behavior of the way the DNS protocol works.
+In this post I'll talk about one of the outages I investigated, where planned maintenance, an unplanned outage, and a miss-configuration led to a triple redundant architecture going down and breaking users roaming into Canada from getting an internet connection.
 
-I've been out of the industry for 5 years now and am reconstructing the story, so there may be some inaccuracy.
-
+I've been out of the industry for a number of years now and I'm putting this back together from memory, so there may be some inaccuracy. 
 
 ## Background
 At the time, network operators such as the one I worked for generally operated as integrators of proprietary solutions. Think of a company like Cisco, that makes large scale routers for carrier grade networks, the same applies to Wireless. This generally creates a few challenges, troubleshooting requires builtin tools, logs, metrics or to look at the equipment externally, such as by taking traffic captures. We rarely had the source code or internal knowledge of the products.
 
-When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture that doesn't really manage servers, they immediately went unmaintained. 
+When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture at the time that doesn't really manage servers, they immediately went unmaintained. 
 
 These unmaintained DNS servers were eventually replaced with a new set of DNS servers that were provided by a vendor as an appliance and had a team assigned to maintain the new system with proper vendor support for hardware and software. 
 
@@ -53,7 +52,7 @@ Using the simulation I eventually narrowed in on a set of clues:
 - In the vendor UI, the root servers were simply called something like root server configuration. However, in Bind we configure a “Root Hints”, an initial set of records to locate other DNS servers. 
 - When starting Bind and inspecting the caches, records within the root hints would be present.
 - Going packet by packet through the startup sequence, there was a discrepancy in the responses to AAAA queries to the root servers for the names of the root servers. The working servers would return a no data result. The non-working root would return a name error response to the AAAA query.
-  - This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.
+  - Note: This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.
 - After the startup queries were returned, the records for the root server were missing from the cache.
 
 I reread the DNS standards a couple of times, top to bottom until the following section of [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) stood out.
@@ -90,7 +89,7 @@ errors are combined, then useless queries may slow the application.
 
 It’s subtle...
 
-Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.
+Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. From the way we interact with and configure DNS servers, we create records independent of each other. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.
 
 So BIND was drawing the inference it was supposed to, the particular name received a name error (NXDomain) response, which meant the name doesn’t exist for any record type. So when performing an IPv6 system query, it should delete all records from its cache that contain the name that doesn’t exist, even those entries that we statically configured in our hints file for the IPv4 address of our root server.
 

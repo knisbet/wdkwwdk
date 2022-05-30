@@ -7,17 +7,17 @@
 	<updated>2022-05-29T00:00:00+00:00</updated>
 	<id>https://wdkwwdk.com/atom.xml</id>
 	<entry xml:lang="en">
-		<title>Outage Stories: Cell Phone Roaming DNS Outage</title>
+		<title>Outage Stories: When DNS takes out cell phone roaming</title>
 		<published>2022-05-29T00:00:00+00:00</published>
 		<updated>2022-05-29T00:00:00+00:00</updated>
 		<link href="https://wdkwwdk.com/posts/outage-stories-dns/" type="text/html"/>
 		<id>https://wdkwwdk.com/posts/outage-stories-dns/</id>
-		<content type="html">&lt;p&gt;When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. This post covers an interesting outage I investigated which caused users roaming into Canada from their home networks fail to get an internet connection. Some of these users would be redirected to a competitor, but we would&#x27;ve lost the roaming revenue. &lt;&#x2F;p&gt;
-&lt;p&gt;The outage was caused by the uniqueness of the way wireless carriers use DNS, a configuration discrepancy, and a subtle behavior of the way the DNS protocol works.&lt;&#x2F;p&gt;
-&lt;p&gt;I&#x27;ve been out of the industry for 5 years now and am reconstructing the story, so there may be some inaccuracy.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. A number of these outages were caused by the way Telecom networks use and deploy a DNS architecture separated from the internet. It&#x27;s the same protocol, but runs on it&#x27;s own networks with separate root servers and a few oddities you wouldn&#x27;t expect on the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;In this post I&#x27;ll talk about one of the outages I investigated, where planned maintenance, an unplanned outage, and a miss-configuration led to a triple redundant architecture going down and breaking users roaming into Canada from getting an internet connection.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been out of the industry for a number of years now and I&#x27;m putting this back together from memory, so there may be some inaccuracy. &lt;&#x2F;p&gt;
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;&#x2F;h2&gt;
 &lt;p&gt;At the time, network operators such as the one I worked for generally operated as integrators of proprietary solutions. Think of a company like Cisco, that makes large scale routers for carrier grade networks, the same applies to Wireless. This generally creates a few challenges, troubleshooting requires builtin tools, logs, metrics or to look at the equipment externally, such as by taking traffic captures. We rarely had the source code or internal knowledge of the products.&lt;&#x2F;p&gt;
-&lt;p&gt;When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture that doesn&#x27;t really manage servers, they immediately went unmaintained. &lt;&#x2F;p&gt;
+&lt;p&gt;When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture at the time that doesn&#x27;t really manage servers, they immediately went unmaintained. &lt;&#x2F;p&gt;
 &lt;p&gt;These unmaintained DNS servers were eventually replaced with a new set of DNS servers that were provided by a vendor as an appliance and had a team assigned to maintain the new system with proper vendor support for hardware and software. &lt;&#x2F;p&gt;
 &lt;p&gt;Even though all of this service discovery was built on the DNS protocol, LTE and UMTS used an architecture completely isolated from the internet, with its own set of root servers and a nice set of standards violations which caused a nice set of problems. In our case, the root servers were provided by a roaming exchange, which can be thought of as a company that exists to connect wireless carriers and facilitate how your cell phone can move from one carrier to another.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-outage&quot;&gt;The Outage&lt;&#x2F;h2&gt;
@@ -51,7 +51,7 @@
 &lt;li&gt;When starting Bind and inspecting the caches, records within the root hints would be present.&lt;&#x2F;li&gt;
 &lt;li&gt;Going packet by packet through the startup sequence, there was a discrepancy in the responses to AAAA queries to the root servers for the names of the root servers. The working servers would return a no data result. The non-working root would return a name error response to the AAAA query.
 &lt;ul&gt;
-&lt;li&gt;This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.&lt;&#x2F;li&gt;
+&lt;li&gt;Note: This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;After the startup queries were returned, the records for the root server were missing from the cache.&lt;&#x2F;li&gt;
@@ -86,7 +86,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;errors are combined, then useless queries may slow the application.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It’s subtle...&lt;&#x2F;p&gt;
-&lt;p&gt;Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.&lt;&#x2F;p&gt;
+&lt;p&gt;Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. From the way we interact with and configure DNS servers, we create records independent of each other. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.&lt;&#x2F;p&gt;
 &lt;p&gt;So BIND was drawing the inference it was supposed to, the particular name received a name error (NXDomain) response, which meant the name doesn’t exist for any record type. So when performing an IPv6 system query, it should delete all records from its cache that contain the name that doesn’t exist, even those entries that we statically configured in our hints file for the IPv4 address of our root server.&lt;&#x2F;p&gt;
 &lt;p&gt;So our IPv4 records for who is root, were getting deleted by system queries that were checking to see if any IPv6 addresses were available for those root servers. &lt;&#x2F;p&gt;
 &lt;h2 id=&quot;root-cause&quot;&gt;Root Cause&lt;&#x2F;h2&gt;
