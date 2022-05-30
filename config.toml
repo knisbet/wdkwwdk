@@ -17,13 +17,17 @@ default_language = "en"
 # When set to "true", a feed is automatically generated.
 generate_feed = true
 
-highlight_theme = "material-light"
+highlight_theme = "agola-dark"
 
 theme = "hermit_zola"
 
 taxonomies = [
     {name = "tags", paginate_by = 25, rss = true}
 ]
+
+[markdown]
+highlight_code = true
+highlight_theme = "agola-dark"
 
 [extra]
 copyright = "Copyright Kevin Nisbet 2020"
