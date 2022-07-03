@@ -4,8 +4,24 @@
 	<link href="https://wdkwwdk.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://wdkwwdk.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-05-29T00:00:00+00:00</updated>
+	<updated>2022-07-02T00:00:00+00:00</updated>
 	<id>https://wdkwwdk.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>ShellGuard: Week 1</title>
+		<published>2022-07-02T00:00:00+00:00</published>
+		<updated>2022-07-02T00:00:00+00:00</updated>
+		<link href="https://wdkwwdk.com/posts/shellguard-week-001/" type="text/html"/>
+		<id>https://wdkwwdk.com/posts/shellguard-week-001/</id>
+		<content type="html">&lt;p&gt;This week, I decided to start a new project called ShellGuard. For the last year or so, I&#x27;ve had an itch. It all started with a customer at &lt;a href=&quot;https:&#x2F;&#x2F;goteleport.com&#x2F;&quot;&gt;Teleport&lt;&#x2F;a&gt; who had concerns about system administrators ability to access customer data on the systems they administer.&lt;&#x2F;p&gt;
+&lt;p&gt;My knee-jerk thought is this is an impossible problem. The security controls don&#x27;t create a clear way to allow a user to change the system, but not touch data. Even if you can write some clever selinux policy or BPF rules, it&#x27;s generally trivial to bypass that protection.&lt;&#x2F;p&gt;
+&lt;p&gt;Even if we narrow our view to just audit, common syscall &#x2F; BPF audit mechanisms are easy to bypass. They&#x27;re more for theatre than actually catching a sophisticated breach of security.&lt;&#x2F;p&gt;
+&lt;p&gt;But it bugged me... badly... that we can&#x27;t restrict access. &lt;&#x2F;p&gt;
+&lt;p&gt;And that&#x27;s where the idea of ShellGuard came in. We already have technologies for running untrusted workloads on a Linux host. Things like (gVisor)[https:&#x2F;&#x2F;gvisor.dev&#x2F;] and (Firecracker)[https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;] provide lightweight ways to virtualize or isolate workloads. What strikes me about a solution like gVisor, is basically the ability to redirect syscall handling to another application. Why can&#x27;t we do the same thing with a shell session. If we wrap the user session within an application Kernel like gvisor, and insert ourselves between the user and kernel, we can implement a new policy engine.&lt;&#x2F;p&gt;
+&lt;p&gt;This idea fascinated me for a few reasons. &lt;&#x2F;p&gt;
+&lt;p&gt;A user can really be setup with a read only view of the host. Policy could be designed in a way where a user really has multiple use cases. I need internet access to GitHub and database access. A user running untrusted software could be exploited to upload the database to GitHub. But what if you could write a policy that says, you can get internet access and database access, but not at the same time. There isn&#x27;t a path left open customer data to reach the internet, even if the user needs both as part of their job.&lt;&#x2F;p&gt;
+&lt;p&gt;So week 1 has mostly been about getting started. I&#x27;ve started to put together a tech demo, so that I can begin to show the concept and how it would work. I really thought isolating user access impossible... but the more I think about it, the more I believe in a world where sensitive access can be segmented away. &lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Outage Stories: When DNS takes out cell phone roaming</title>
 		<published>2022-05-29T00:00:00+00:00</published>
