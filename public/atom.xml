@@ -4,8 +4,21 @@
 	<link href="https://wdkwwdk.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://wdkwwdk.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-07-02T00:00:00+00:00</updated>
+	<updated>2022-07-11T00:00:00+00:00</updated>
 	<id>https://wdkwwdk.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>ShellGuard: Week 2 - Road to MVP</title>
+		<published>2022-07-11T00:00:00+00:00</published>
+		<updated>2022-07-11T00:00:00+00:00</updated>
+		<link href="https://wdkwwdk.com/posts/shellguard-week-002/" type="text/html"/>
+		<id>https://wdkwwdk.com/posts/shellguard-week-002/</id>
+		<content type="html">&lt;p&gt;There isn&#x27;t a huge deal of progress to talk about this week. Most of the progress has been in intangible areas. The product demo I&#x27;ve been working on is making steady progress, but it offers no security benefits. So it&#x27;s more of a UX demo, and will need to be rebuilt to offer an actual MVP. &lt;&#x2F;p&gt;
+&lt;p&gt;So now that I&#x27;m able to demonstrate most UX patterns I&#x27;m thinking of for ShellGuard, I&#x27;m starting to consider when to pivot into an MVP. The smallest product that provides real security benefits, so that I can start getting users. I think I&#x27;ve figured out enough for an MVP, so it&#x27;s time to consider how much further I want to take the demo.&lt;&#x2F;p&gt;
+&lt;p&gt;On the non-tangible side, I&#x27;ve binge read &lt;a href=&quot;http:&#x2F;&#x2F;momtestbook.com&#x2F;&quot;&gt;The Mom Test&lt;&#x2F;a&gt; to better ask the right product questions, and been doing some research into other approaches. Basically, I want to figure out if there is a market here or not. If shell and user security is an area companies will care about enough to invest into solutions, if new solutions are presented.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve also started thinking about how to design the best UX patterns. This is harder than it might seem, as even in the prototype there is already conflicting language that would be confusing for users. &lt;&#x2F;p&gt;
+&lt;p&gt;Anyways, not a huge amount to report, but making some steady progress.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>ShellGuard: Week 1</title>
 		<published>2022-07-02T00:00:00+00:00</published>

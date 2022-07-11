@@ -20,7 +20,7 @@
   />
   <link rel="stylesheet" href="https://wdkwwdk.com/style.css"/>
   
-  <title>ShellGuard: Week 1</title>
+  <title>ShellGuard: Week 2 - Road to MVP</title>
   
 
   
@@ -112,7 +112,7 @@
 	<header class="post-header">
 	  <div class="post-meta">
 		
-		<span>Jul 02, 2022</span>
+		<span>Jul 11, 2022</span>
 		<small> - 
 <span class="reading-time" title="Estimated read time">
   
@@ -123,27 +123,24 @@
 		
             
 	  </div>
-	  <h1>ShellGuard: Week 1</h1>
+	  <h1>ShellGuard: Week 2 - Road to MVP</h1>
 	</header>
 
 	<div class="content">
         
-	  <p>This week, I decided to start a new project called ShellGuard. For the last year or so, I've had an itch. It all started with a customer at <a href="https://goteleport.com/">Teleport</a> who had concerns about system administrators ability to access customer data on the systems they administer.</p>
-<p>My knee-jerk thought is this is an impossible problem. The security controls don't create a clear way to allow a user to change the system, but not touch data. Even if you can write some clever selinux policy or BPF rules, it's generally trivial to bypass that protection.</p>
-<p>Even if we narrow our view to just audit, common syscall / BPF audit mechanisms are easy to bypass. They're more for theatre than actually catching a sophisticated breach of security.</p>
-<p>But it bugged me... badly... that we can't restrict access. </p>
-<p>And that's where the idea of ShellGuard came in. We already have technologies for running untrusted workloads on a Linux host. Things like (gVisor)[https://gvisor.dev/] and (Firecracker)[https://firecracker-microvm.github.io/] provide lightweight ways to virtualize or isolate workloads. What strikes me about a solution like gVisor, is basically the ability to redirect syscall handling to another application. Why can't we do the same thing with a shell session. If we wrap the user session within an application Kernel like gvisor, and insert ourselves between the user and kernel, we can implement a new policy engine.</p>
-<p>This idea fascinated me for a few reasons. </p>
-<p>A user can really be setup with a read only view of the host. Policy could be designed in a way where a user really has multiple use cases. I need internet access to GitHub and database access. A user running untrusted software could be exploited to upload the database to GitHub. But what if you could write a policy that says, you can get internet access and database access, but not at the same time. There isn't a path left open customer data to reach the internet, even if the user needs both as part of their job.</p>
-<p>So week 1 has mostly been about getting started. I've started to put together a tech demo, so that I can begin to show the concept and how it would work. I really thought isolating user access impossible... but the more I think about it, the more I believe in a world where sensitive access can be segmented away. </p>
+	  <p>There isn't a huge deal of progress to talk about this week. Most of the progress has been in intangible areas. The product demo I've been working on is making steady progress, but it offers no security benefits. So it's more of a UX demo, and will need to be rebuilt to offer an actual MVP. </p>
+<p>So now that I'm able to demonstrate most UX patterns I'm thinking of for ShellGuard, I'm starting to consider when to pivot into an MVP. The smallest product that provides real security benefits, so that I can start getting users. I think I've figured out enough for an MVP, so it's time to consider how much further I want to take the demo.</p>
+<p>On the non-tangible side, I've binge read <a href="http://momtestbook.com/">The Mom Test</a> to better ask the right product questions, and been doing some research into other approaches. Basically, I want to figure out if there is a market here or not. If shell and user security is an area companies will care about enough to invest into solutions, if new solutions are presented.</p>
+<p>I've also started thinking about how to design the best UX patterns. This is harder than it might seem, as even in the prototype there is already conflicting language that would be confusing for users. </p>
+<p>Anyways, not a huge amount to report, but making some steady progress.</p>
 
 	</div>
 	<hr class="post-end">
 	<footer class="post-info">
     
-    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>398 Words</p>
+    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>230 Words</p>
     
-    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-07-02</p>
+    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-07-11</p>
     
 	</footer>
   </article>
@@ -151,19 +148,10 @@
   
   <div class="post-nav thin">
 	
-	<a class="next-post" href="https:&#x2F;&#x2F;wdkwwdk.com&#x2F;posts&#x2F;shellguard-week-002&#x2F;">
-	  <span class="post-nav-label">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-		  <line x1="19" y1="12" x2="5" y2="12"></line>
-		  <polyline points="12 19 5 12 12 5"></polyline>
-		</svg>&nbsp;Newer</span><br>
-		<span>ShellGuard: Week 2 - Road to MVP</span>
-	</a>
 	
-	
-	<a class="prev-post" href="https:&#x2F;&#x2F;wdkwwdk.com&#x2F;posts&#x2F;outage-stories-dns&#x2F;">
+	<a class="prev-post" href="https:&#x2F;&#x2F;wdkwwdk.com&#x2F;posts&#x2F;shellguard-week-001&#x2F;">
 	  <span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br>
-	  <span>Outage Stories: When DNS takes out cell phone roaming</span>
+	  <span>ShellGuard: Week 1</span>
 	</a>
 	
   </div>
