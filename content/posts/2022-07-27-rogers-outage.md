@@ -1,5 +1,5 @@
 +++
-title = "Taking a look at the Rogers Outage via the CRTC filings"
+title = "Taking a look at the Rogers Outage CRTC Letter"
 +++
 
 Last week, the CRTC made public a redacted version of the response Rogers filed with answers to the regulators questions. I started my career in wireless telecommunications for a competitor to Rogers here in Canada, and wanted to dig through the outage. I've been out of the industry for a few years now, but my outdated perspective may be of some use here.
