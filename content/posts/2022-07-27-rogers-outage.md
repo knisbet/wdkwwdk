@@ -98,7 +98,7 @@ Someone knew about this and placed that configuration on the router.
 
 This is a known failure mode for most routing equipment. Most of these big routers seem like big powerful machines, but they tend to be more of a fast path for pushing many millions of packets. And a separate compute for sending and receiving signalling about where those packets should go. The control plane side that does the signalling there are often many ways to overload, which will cause peers to think the router has died. 
 
-### how did Rogers prioritize reinstating services and what repairs were required
+### How did Rogers prioritize reinstating services and what repairs were required?
 ```txt
 The prioritization of service restoration was always dependent on which service was most relied upon by Canadians for emergency services. As wireless devices have become the dominant form of communicating for a vast majority of Canadians, the wireless network was the first focus of our recovery efforts. Subsequently, we focused on landline service, which remains another important method to access emergency care. We then the worked to restore data services, particularly for critical care services and infrastructure.
 ```
@@ -112,13 +112,13 @@ When I worked a similar outage for a competitor, the team would find something l
 
 
 
-### what measures or steps were put in place in the aftermath of the earlier-mentioned April 2021 outage, and why they failed in preventing this new outage
+### What measures or steps were put in place in the aftermath of the earlier-mentioned April 2021 outage, and why they failed in preventing this new outage?
 
 Everything substantive in the response to this question was redacted. It's unfortunate, because as an industry, including non-telecom like SRE can learn substantially from how Telecoms operate networks as reliable as they are. 
 
 Basically Rogers did lots of vague things to prevent similar failures.
 
-### how did the outage impact Rogers’ own staff and their ability to determine the cause of the outage and restore services;
+### How did the outage impact Rogers’ own staff and their ability to determine the cause of the outage and restore services?
 
 ```txt
 At the early stage of the outage, many Rogers’ network employees were impacted and could not connect to our IT and network systems.  This impeded initial triage and restoration efforts as teams needed to travel to centralized locations where management network access was established. To complicate matters further, the loss of access to our VPN system to our core network nodes affected our timely ability to begin identifying the trouble and, hence, delayed the restoral efforts.  
@@ -133,7 +133,7 @@ I almost wonder if there is room for something like Starlink here, as the satell
 Having experienced a similar failure, when I noticed my home internet and cell phone were all offline, I started driving to the office to get a stable connection to production. That was a long day.
 
 
-### extent to which Rogers sought or received assistance from other TSPs in addressing the outage or situation arising from the service interruption;
+### Extent to which Rogers sought or received assistance from other TSPs in addressing the outage or situation arising from the service interruption?
 
 ```txt
 In order to allow our customers to use Bell or TELUS’ networks, we would have needed access to our own Home Location Register (“HLR”), Home Subscriber Server (“HSS”) and Centralized User Database (“CUDB”). This was not possible during the incident. 
@@ -177,7 +177,7 @@ With respect to broadcasting (cable TV/Radio) alerts, our alert hardware is conn
 And also alerts on services that weren't cell sites all use the IP network.
 
 
-### whether the outage specifically impacted the 9-1-1 networks or only the originating networks, and if the former, how was this possible in light of resiliency and redundancy obligations imposed by the Commission;
+### Whether the outage specifically impacted the 9-1-1 networks or only the originating networks, and if the former, how was this possible in light of resiliency and redundancy obligations imposed by the Commission
 
 ```txt
 The outage solely impacted Rogers’ originating network. The 9-1-1 networks that receive calls from originating networks are not operated by Rogers. Rather, they are operated by the three large Canadian Incumbent Local Exchange Carriers (“ILECs”). They were unaffected by the outage.
@@ -185,7 +185,7 @@ The outage solely impacted Rogers’ originating network. The 9-1-1 networks tha
 
 This is basically saying that Rogers is not operating the 911 networks themselves, as those are operated by Telus, Bell, and Sasktell across Canada. So the impact was isolated to Rogers network being able to deliver emergency calls to the 911 networks.
 
-### number of public alerts sent that did not reach Rogers’ customers, broken down by province;
+### Number of public alerts sent that did not reach Rogers’ customers, broken down by province;
 ```txt
 Only four (4) alerts were received on Rogers WPAS BMC platform on July 8th. All alerts were in the Province of Saskatchewan. No other alert was issued in Canada on that day:
 
@@ -197,7 +197,7 @@ Only four (4) alerts were received on Rogers WPAS BMC platform on July 8th. All 
 
 I'm just including this as it adds perspective on the number of alerts Rogers wasn't able to deliver across the country that day.
 
-### how were 9-1-1 calls processed during the outage and whether they were able to be processed by other wireless networks within the same coverage area;
+### How were 9-1-1 calls processed during the outage and whether they were able to be processed by other wireless networks within the same coverage area
 
 ```txt
 As seen in Rogers(CRTC)11July2022-2.i above, Rogers was able to route thousands of 9-1-1 calls on July 8th.  Rogers’ wireless network worked intermittently during that day as we were trying to restore our IP core network, varying region by region.
@@ -213,7 +213,7 @@ The UE is the User Equipment, basically the cell phone.
 
 I think what Rogers is trying to say, is if the cell phone was in a state where it didn't see the Rogers network, like "No Service" on the display, an emergency call would do a network scan and attach to another network with service. 
 
-### whether other measures could have been taken to re-establish 9-1-1 services sooner;
+### Whether other measures could have been taken to re-establish 9-1-1 services sooner
 
 ```txt
 No other measures would have helped restore 9-1-1 service on July 8th. One possible option that was explored by Rogers was to shut down our RAN. Normally, if a customer’s device cannot connect to their own carrier’s RAN, they will automatically connect to the strongest signal available, even from another carrier, for the purpose of making a 9-1-1 call. However, since Rogers’ RAN remained in service on July 8th, many Rogers customers phones did not attempt to connect to another network.
@@ -223,7 +223,7 @@ If this is the case, what the report doesn't talk about at all is that non-Roger
 
 So if this was the case, the Rogers network behaving like this could have prevented emergency calls from reaching a working network. This certainly would be the minority of devices, but I find this to be infuriating that the network sat there advertising 911 services, for hours, that it could not be delivered.
 
-### what alternatives are available to Rogers’ customers to access 9-1-1 services during such outages;
+### What alternatives are available to Rogers’ customers to access 9-1-1 services during such outages
 
 ```txt
 The GSM standard for the routing of 9-1-1 calls implies that a wireless customer always has the option to remove the SIM card from their device and then to place the 9-1-1 call. The handset will register to another wireless network (the one with the strongest signal, even if there are not roaming arrangements).
