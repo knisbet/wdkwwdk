@@ -183,7 +183,7 @@ And also alerts on services that weren't cell sites all use the IP network.
 The outage solely impacted Rogers’ originating network. The 9-1-1 networks that receive calls from originating networks are not operated by Rogers. Rather, they are operated by the three large Canadian Incumbent Local Exchange Carriers (“ILECs”). They were unaffected by the outage.
 ```
 
-This is basically saying that Rogers is not operating the 911 networks themselves, as those are operated by Telus, Bell, and Sasktell across Canada. So the impact was isolated to Rogers network being able to deliver emergency calls to the 911 networks.
+This is basically saying that Rogers is not operating the 911 networks themselves, as those are operated by Telus, Bell, and SaskTel across Canada. So the impact was isolated to Rogers network being able to deliver emergency calls to the 911 networks.
 
 ### Number of public alerts sent that did not reach Rogers’ customers, broken down by province;
 ```txt
@@ -221,7 +221,7 @@ No other measures would have helped restore 9-1-1 service on July 8th. One possi
 
 If this is the case, what the report doesn't talk about at all is that non-Rogers customers could be impacted by this outage as well. If a competitor had very weak coverage, it might scan and find the Rogers network and try to use it for the emergency call, instead of finding a network to use. Or a device that is roaming and in airplane mode and then needs to make an emergency call, will try to attach to the first network it finds.
 
-So if this was the case, the Rogers network behaving like this could have prevented emergency calls from reaching a working network. This certainly would be the minority of devices, but I find this to be infuriating that the network sat there advertising 911 services, for hours, that it could not be delivered.
+So if this was the case, the Rogers network behaving like this could have prevented emergency calls from reaching a working network. This certainly would be the minority of devices, but I find this to be infuriating that the network sat there advertising 911 services, for hours, that it could not deliver.
 
 ### What alternatives are available to Rogers’ customers to access 9-1-1 services during such outages
 
