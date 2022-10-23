@@ -208,3 +208,41 @@ pre table {
   }
 }
 
+
+
+// list.html
+//
+.posts-group {
+  display: flex;
+  margin-bottom: 1.9em;
+  line-height: normal;
+
+  .post-year {
+    padding-top: 6px;
+    margin-right: 1.8em;
+    font-size: 1.6em;
+    @include dimmed;
+  }
+
+  .posts-list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .post-item {
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 4px 0;
+    }
+  }
+
+  .post-day {
+    flex-shrink: 0;
+    margin-left: 1em;
+    @include dimmed;
+  }
+}
