@@ -1,0 +1,210 @@
+//@import "predefined.scss";
+//@import "normalize.scss";
+//@import "syntax.scss";
+//@import "animate.scss";
+//@at-root "icons.scss";
+
+@import "water.scss";
+@import url("syntax-theme-dark.css") (prefers-color-scheme: dark);
+@import url("syntax-theme-light.css") (prefers-color-scheme: light);
+
+@mixin dimmed {
+  opacity: 0.6;
+}
+
+pre {
+  padding: 1rem;
+  overflow: auto;
+}
+// The line numbers already provide some kind of left/right padding
+pre[data-linenos] {
+  padding: 1rem 0;
+}
+pre table td {
+  padding: 0;
+}
+// The line number cells
+pre table td:nth-of-type(1) {
+  text-align: center;
+  user-select: none;
+}
+pre mark {
+  // If you want your highlights to take the full width.
+  display: block;
+  // The default background colour of a mark is bright yellow
+  background-color: rgba(254, 252, 232, 0.9);
+}
+pre table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.zola-anchor {
+  text-decoration: none;
+  color: #01080c;
+  color: var(--text-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .zola-anchor {
+    color: #030b10;
+    color: var(--text-muted);
+  }
+}
+
+.hdr-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0;
+  font-size: 1.2rem;
+
+  .site-branding {
+    display: inline-block;
+    margin-right: 0.8em;
+    font-size: 1.2em;
+  }
+
+  .site-nav {
+    display: inline-block;
+    font-size: 1.1em;
+    opacity: 0.8;
+
+    a {
+      margin-left: 0.8em;
+    }
+  }
+}
+
+#menu-btn {
+  display: none;
+  margin-left: 0.6em;
+  cursor: pointer;
+}
+
+#mobile-menu {
+  position: fixed;
+  bottom: 4.8em;
+  right: 1.5em;
+  display: none;
+  padding: 0.6em 1.8em;
+  z-index: 1;
+  box-sizing: border-box;
+  box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
+  //background-color: $dark-grey;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: 1.2em;
+  }
+}
+
+.post-header {
+  margin-top: 1.2em;
+  line-height: normal;
+
+  .post-meta {
+    font-size: 0.9em;
+    letter-spacing: normal;
+    @include dimmed;
+  }
+
+  h1 {
+    margin-top: 0.1em;
+  }
+}
+
+.post-info {
+  font-size: 0.8rem;
+  line-height: normal;
+  @include dimmed;
+
+  p {
+    margin: 0.8em 0;
+  }
+
+  svg {
+    margin-right: 0.8em;
+  }
+
+  .tag {
+    margin-right: 0.5em;
+
+    &::before {
+      content: "#";
+    }
+  }
+}
+
+.hdr-social {
+  display: inline-block;
+  margin-left: 0.6em;
+
+  & > a {
+    margin-left: 0.4em;
+  }
+}
+
+.hdr-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  margin-left: 0.4em;
+  cursor: pointer;
+}
+
+#home-center {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home-title {
+  margin: 0;
+  text-align: center;
+}
+
+#home-subtitle {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  text-align: center;
+  line-height: normal;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+#home-social {
+  font-size: 1.4em;
+  text-align: center;
+  opacity: 0.8;
+
+  a {
+    margin: 0 0.2em;
+  }
+}
+
+#home-nav {
+  opacity: 0.8;
+
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+  }
+}
+
+#home-footer {
+  text-align: center;
+  font-size: 0.6em;
+  line-height: normal;
+  @include dimmed;
+
+  p {
+    margin-top: 0;
+  }
+}
+
