@@ -246,3 +246,23 @@ pre table {
     @include dimmed;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  :root[data-color-mode=auto] .content [href$="#gh-dark-mode-only"],
+  :root[data-color-mode=auto] .comment-body [href$="#gh-dark-mode-only"],
+  :root[data-color-mode=auto] .readme [href$="#gh-dark-mode-only"] {
+      display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  img[src*="#gh-light-mode-only"] {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  img[src*="#gh-dark-mode-only"] {
+    display: none;
+  }
+}

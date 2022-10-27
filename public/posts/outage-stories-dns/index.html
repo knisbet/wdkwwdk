@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta itemprop="name" content="" />
+  <meta itemprop="description" content="" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://wdkwwdk.com/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://wdkwwdk.com/favicon-32x32.png" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://wdkwwdk.com/favicon-16x16.png"
+  />
+  <link
+    rel="shortcut icon"
+    href="https://wdkwwdk.com/favicon.ico"
+  />
+
+  <link rel="stylesheet" href="https://wdkwwdk.com/style.css"/>
+  
+  <title>Outage Stories: When DNS takes out cell phone roaming</title>
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://wdkwwdk.com/atom.xml">
+  
+
+  <body id="page">
+
+	
+<header id="site-header" class="slideInUp faster">
+  <div class="hdr-wrapper section-inner">
+    <div class="hdr-left">
+      <div class="site-branding">
+        <a href="https:&#x2F;&#x2F;wdkwwdk.com"></a>
+      </div>
+      <nav class="site-nav hide-in-mobile">
+            
+        
+        <a href="https://wdkwwdk.com/posts">Posts</a>
+        
+        <a href="https://wdkwwdk.com/about">About</a>
+        
+      </nav>
+    </div>
+    <div class="hdr-right hdr-icons">
+      <span class="hdr-social hide-in-mobile">
+        
+
+<a href="https:&#x2F;&#x2F;github.com&#x2F;knisbet" target="_blank" rel="noopener me" title="github">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+  
+</a>
+
+<a href="mailto:kevin@wdkwwdk.com" target="_blank" rel="noopener me" title="email">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+  
+</a>
+
+<a href="https:&#x2F;&#x2F;ca.linkedin.com&#x2F;in&#x2F;kevin-nisbet-783a0a49" target="_blank" rel="noopener me" title="linkedin">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  
+</a>
+
+
+      </span>
+      <button id="menu-btn" class="hdr-btn" title="Menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-menu"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="mobile-menu" class="animated fast">
+  <ul>
+    
+    <li><a href="https://wdkwwdk.com/posts">Posts</a></li>
+    
+    <li><a href="https://wdkwwdk.com/about">About</a></li>
+    
+  </ul>
+</div>
+
+	
+	
+
+		
+<main class="site-main section-inner animated fadeIn faster">
+  <article class="thin">
+	<header class="post-header">
+	  <div class="post-meta">
+		
+		<span>May 29, 2022</span>
+		<small> - 
+<span class="reading-time" title="Estimated read time">
+  
+  8 min read
+  
+</span>
+</small>
+		
+            
+	  </div>
+	  <h1>Outage Stories: When DNS takes out cell phone roaming</h1>
+	</header>
+
+	<div class="content">
+        
+	  <p>When I used to work in Telecom networks, on technologies like LTE or UMTS, I was often tasked with investigating and resolving hard problems. A number of these outages were caused by the way Telecom networks use and deploy a DNS architecture separated from the internet. It's the same protocol, but runs on it's own networks with separate root servers and a few oddities you wouldn't expect on the internet.</p>
+<p>In this post I'll talk about one of the outages I investigated, where planned maintenance, an unplanned outage, and a miss-configuration led to a triple redundant architecture going down and breaking users roaming into Canada from getting an internet connection.</p>
+<p>I've been out of the industry for a number of years now and I'm putting this back together from memory, so there may be some inaccuracy. </p>
+<h2 id="background"><a class="zola-anchor" href="#background" aria-label="Anchor link for: background" style="box-shadow: none">Background</a></h2>
+<p>At the time, network operators such as the one I worked for generally operated as integrators of proprietary solutions. Think of a company like Cisco, that makes large scale routers for carrier grade networks, the same applies to Wireless. This generally creates a few challenges, troubleshooting requires builtin tools, logs, metrics or to look at the equipment externally, such as by taking traffic captures. We rarely had the source code or internal knowledge of the products.</p>
+<p>When our company originally deployed its 3G wireless network, someone just built a half dozen linux servers and installed ISC BIND to act as DNS servers. These DNS servers were effectively used for service discovery within the network, and to facilitate roaming between networks from different carriers. Because these servers were just thrown in as a network build out in a company culture at the time that doesn't really manage servers, they immediately went unmaintained. </p>
+<p>These unmaintained DNS servers were eventually replaced with a new set of DNS servers that were provided by a vendor as an appliance and had a team assigned to maintain the new system with proper vendor support for hardware and software. </p>
+<p>Even though all of this service discovery was built on the DNS protocol, LTE and UMTS used an architecture completely isolated from the internet, with its own set of root servers and a nice set of standards violations which caused a nice set of problems. In our case, the root servers were provided by a roaming exchange, which can be thought of as a company that exists to connect wireless carriers and facilitate how your cell phone can move from one carrier to another.</p>
+<h2 id="the-outage"><a class="zola-anchor" href="#the-outage" aria-label="Anchor link for: the-outage" style="box-shadow: none">The Outage</a></h2>
+<p>The roaming exchange we were partnered with normally had 3 DNS servers in operation. These servers are sort of a combination of DNS roots and Zone servers in one. In internet terms, it’s as if the root and .com servers were running on the same machines. But these are not the internet root servers, they're something custom just for the wireless telecoms. </p>
+<p>The roaming exchange had taken one of their servers down for extended maintenance and then experienced an outage on a second server. And our connectivity to international networks went down, even though there should have been one working server. From our perspective, it was as if the internet root servers all disappeared. Our internal network was fine, just the rest of the world blinked out of existence. </p>
+<p>The outage was eventually recovered by the roaming exchange fixing one of the down DNS servers.</p>
+<h2 id="the-investigation"><a class="zola-anchor" href="#the-investigation" aria-label="Anchor link for: the-investigation" style="box-shadow: none">The Investigation</a></h2>
+<p>For 2 of 3 root servers, the root cause was pretty straightforward and was up to the partner to solve. The problem I was brought in to investigate, is why we weren’t working with the third server which according to the partner was online and working throughout the outage. No other complaints according to them.</p>
+<p>The summary of the initial findings was something along the lines of:</p>
+<ul>
+<li>There was no network cause for the failure. We could reach the server. </li>
+<li>Testing and packet captures showed bi-directional communications:
+<ul>
+<li>Normal communications for several seconds after DNS service was restarted on our new DNS resolvers.</li>
+<li>Manual queries from the host were working, despite the server itself not trying to communicate with the particular root.</li>
+</ul>
+</li>
+<li>Our old DNS servers were still running and did not experience an outage to the working server.</li>
+</ul>
+<p>Note: The new and old servers were both based on ISC Bind, but different versions.</p>
+<p>Inspecting the DNS caches on the new servers, showed records related to the working root server were missing, while records towards other roots were present.</p>
+<p>At the time I likely had an average understanding of the DNS protocols and services, similar to anyone who has had to configure records to set up a website. We engaged our vendor support and began working with someone whose expertise was specifically in the DNS protocol and specifications, and even escalated to basically the guy who wrote the book on DNS. The outcome of that discussion was that the vendor would write us a custom patch, just for us, the exact details of which I don’t remember.</p>
+<h2 id="the-sniff-test"><a class="zola-anchor" href="#the-sniff-test" aria-label="Anchor link for: the-sniff-test" style="box-shadow: none">The Sniff Test</a></h2>
+<p>The difficulty was that this solution didn’t seem to pass the sniff test. There were too many unexplained components to the problem, that writing a patch may or may not resolve. But if nothing else, it was clear that we hadn’t established at this point what the problem was, and suggesting patches or features was premature.</p>
+<p>So I set up several VMs that I could use to simulate every host in the production network. I queried the real servers, and then configured my simulation with matching records. I had effectively recreated the production DNS servers of our company, the roaming exchange, and a roaming partner. I was able to reproduce the problem and began experimenting.</p>
+<p>I built 10-20 releases of Bind, covering the versions between our old and new servers until I had isolated a series of patches where the problem began. I went through the release notes and nothing stood out but found that the patch that broke our DNS was more than a year old. It seemed unlikely that we were the only ones to have this problem across a year+ of patches. I ended up setting aside this line of investigation before investigating the source code for each patch.</p>
+<h2 id="clues"><a class="zola-anchor" href="#clues" aria-label="Anchor link for: clues" style="box-shadow: none">Clues</a></h2>
+<p>Using the simulation I eventually narrowed in on a set of clues:</p>
+<ul>
+<li>In the vendor UI, the root servers were simply called something like root server configuration. However, in Bind we configure a “Root Hints”, an initial set of records to locate other DNS servers. </li>
+<li>When starting Bind and inspecting the caches, records within the root hints would be present.</li>
+<li>Going packet by packet through the startup sequence, there was a discrepancy in the responses to AAAA queries to the root servers for the names of the root servers. The working servers would return a no data result. The non-working root would return a name error response to the AAAA query.
+<ul>
+<li>Note: This was an IPv4 only network, so it didn’t seem like focussing on AAAA (IPv6 records) was an important detail at the time. Turns out it was quite important.</li>
+</ul>
+</li>
+<li>After the startup queries were returned, the records for the root server were missing from the cache.</li>
+</ul>
+<p>I reread the DNS standards a couple of times, top to bottom until the following section of <a href="https://datatracker.ietf.org/doc/html/rfc1034">RFC 1034</a> stood out.</p>
+<pre data-lang="txt" class="language-txt z-code"><code class="language-txt" data-lang="txt"><span class="z-text z-plain">When the resolver performs the indicated function, it usually has one of
+the following results to pass back to the client:
+
+   - One or more RRs giving the requested data.
+
+     In this case the resolver returns the answer in the
+     appropriate format.
+
+   - A name error (NE).
+
+     This happens when the referenced name does not exist.  For
+     example, a user may have mistyped a host name.
+
+   - A data not found error.
+
+     This happens when the referenced name exists, but data of the
+     appropriate type does not.  For example, a host address
+     function applied to a mailbox name would return this error
+     since the name exists, but no address RR is present.
+
+It is important to note that the functions for translating between host
+names and addresses may combine the &quot;name error&quot; and &quot;data not found&quot;
+error conditions into a single type of error return, but the general
+function should not.  One reason for this is that applications may ask
+first for one type of information about a name followed by a second
+request to the same name for some other type of information; if the two
+errors are combined, then useless queries may slow the application.
+</span></code></pre>
+<p>It’s subtle...</p>
+<p>Analyzing DNS as a protocol, it’s easy to think of a request and response for a particular record type as an independent operation. From the way we interact with and configure DNS servers, we create records independent of each other. But this particular portion of the standard allows a caching resolver to draw a relationship between different record types based on the error result, specifically whether the name exists for other record types.</p>
+<p>So BIND was drawing the inference it was supposed to, the particular name received a name error (NXDomain) response, which meant the name doesn’t exist for any record type. So when performing an IPv6 system query, it should delete all records from its cache that contain the name that doesn’t exist, even those entries that we statically configured in our hints file for the IPv4 address of our root server.</p>
+<p>So our IPv4 records for who is root, were getting deleted by system queries that were checking to see if any IPv6 addresses were available for those root servers. </p>
+<h2 id="root-cause"><a class="zola-anchor" href="#root-cause" aria-label="Anchor link for: root-cause" style="box-shadow: none">Root Cause</a></h2>
+<p>With this breakthrough, I was able to document what was happening:</p>
+<ol>
+<li>During startup/reset, the DNS server would load the root hints and prepopulate the cache to use those roots.</li>
+<li>During startup, it would also see it only has a bunch of IPv4 roots, so would start querying the roots for the equivalent IPv6 records.</li>
+<li>For one of the upstream servers, the response for IPv6 records would return NXDomain, which we now know that name doesn’t exist anywhere and would clear the matching IPv4 records from the cache. The missing records from the cache wouldn’t allow the particular server to be used as a root.</li>
+<li>There is one detail I’m not sure I remember accurately, which is how the servers were responding to the root system query and the interaction with these statically configured records. </li>
+<li>Our new servers had never worked with this one root server, it was missed during commissioning that the root server was not being used and had never worked since the new servers were added.</li>
+<li>The underlying BIND implementation didn’t always implement this behaviour, buried in a patch somewhere is an update to follow the standard more closely, as in it’s plausible a bug was just noticed and fixed.</li>
+<li>We had the wrong server name on both the old and new servers, only the new servers had the relevant patches. If we had kept the old servers routinely patched, they would have had the same problem.</li>
+<li>One of the server names we had for the roots was wrong, this is why we were getting an NXDomain response on the AAAA query instead of a no records response.</li>
+</ol>
+<p>If the 3 roaming exchange servers were called:</p>
+<pre data-lang="txt" class="language-txt z-code"><code class="language-txt" data-lang="txt"><span class="z-text z-plain">dns1.grx.gsma.
+dns2.grx-partner.gsma.
+dns3.grx-partner.gsma.
+</span></code></pre>
+<p>Our configuration was:</p>
+<pre data-lang="txt" class="language-txt z-code"><code class="language-txt" data-lang="txt"><span class="z-text z-plain">dns1.grx.gsma.
+dns2.grx.gsma.
+dns3.grx-partner.gsma.
+</span></code></pre>
+<p>As I recall, the way this problem happened was that the roaming partner was rebuilding their DNS servers one by one. And the rebuilt servers were using a new naming scheme, but they had gotten ahead of themselves and the datasheet used to exchange information between companies was out of date or miss-matched, so we still had an old name for a new server with the same IP address. </p>
+<p>This allowed us to draw one more conclusion, we were the only carrier partnered with this roaming exchange using BIND that had updated our installation in the previous year, because we were the only ones who reported going down when the other two root servers were down. </p>
+
+	</div>
+	<!--<hr class="post-end">-->
+	<footer class="post-info">
+    
+    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2017 Words</p>
+    
+    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-05-29</p>
+    
+	</footer>
+  </article>
+    
+  
+  <div class="post-nav thin">
+	
+	
+  </div>
+
+  
+</main>
+
+	  </div>
+	  
+	  
+
+
+
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+  <p>
+    
+	<a href="https://wdkwwdk.com/atom.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+	
+    &copy; 2022 <a href="https:&#x2F;&#x2F;wdkwwdk.com">Kevin Nisbet</a> &#183; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+</footer>
+
+
+
+
+	</div>
+	
+	<script data-goatcounter="https://wdkwwdk.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+	<!-- Math rendering -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+    
+
+	
+	<script src="https://wdkwwdk.com/js/copy.js"></script>
+	
+
+    
+    
+
+	
+  </body>
+</html>
